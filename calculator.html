@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        body{
+            background-image: url(./backk.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #parent{
+            height: 400px;
+            width: 300px;
+            border: 1px solid;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* background-color: darkslategray; */
+            border-radius: 20px;
+            box-shadow: 6px 6px 9px;
+            background-image: url(./calimg.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          
+        }
+        input{
+            width: 250px;
+            height: 80px;
+            font-size: 2rem;
+            padding: 1rem;
+            border: none;
+            text-align: right;
+            margin-left: 10px;
+            margin-top: 10px;
+            background-color: slategrey;
+            color: antiquewhite;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px;
+
+        }
+        .bu{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        button{
+            flex: 0 0 22%;
+            margin: 5px 0;
+            border: 1px solid;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+        }
+        .bequal{
+            background-color: green;
+        }
+        .bclear{
+            background-color: red;
+        }
+        .bt{
+            background-color: darkgoldenrod;
+            box-shadow: 3px 3px 5px;
+        }
+        .b{
+            background-color: grey;
+            box-shadow: 3px 3px 5px;
+            background-color: transparent;
+            
+        }
+        button:hover{
+            background-color: chartreuse;
+
+        }
+     </style>
+</head>
+<body>
+    <div id="parent">
+        <input id="screen" type="text" placeholder="0">
+        <br>
+        <div class="bu">
+        <button class="b" onclick="show('1')">1</button>
+        <button class="b" onclick="show('2')">2</button>
+        <button class="b" onclick="show('3')">3</button>
+        <button class="b" onclick="show('4')">4</button>
+        <button class="b" onclick="show('5')">5</button>
+        <button class="b" onclick="show('6')">6</button>
+        <button class="b" onclick="show('7')">7</button>
+        <button class="b" onclick="show('8')">8</button>
+        <button class="b" onclick="show('9')">9</button>
+        <button class="b" onclick="show('0')">0</button>
+        <button class="bt" onclick="show('+')">+</button>
+        <button class="bt" onclick="show('-')">-</button>
+        <button class="bt" onclick="show('/')">/</button>
+        <button class="bt" onclick="show('*')">*</button>
+        <button class="bequal" onclick="cal('=')">=</button>
+        <button class="bclear" onclick="allclear()">c</button>  
+        </div>
+    </div>
+    <script>
+        let display=document.getElementById("screen")
+        function allclear() {
+            display.value=""
+        }
+        function show(n) {
+            display.value=display.value+n
+        }
+         function cal() {
+            display.value=eval(display.value)
+        }
+
+    </script>
+</body>
+</html>
